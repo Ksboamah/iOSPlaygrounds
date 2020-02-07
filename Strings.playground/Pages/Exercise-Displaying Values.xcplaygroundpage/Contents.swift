@@ -18,7 +18,7 @@ let iphoneCapacityInMB = 8000
 let iphoneCurrentStorageFilledInMB = 3000
 let capacityOfVideoInMB = 150
 let numberOfPossibleVideoMinutes = (iphoneCapacityInMB - iphoneCurrentStorageFilledInMB)/capacityOfVideoInMB
-let iphoneVideoStorageCapacity = "You can record \(numberOfPossibleVideoMinutes) more minutes of video"
+let iphoneVideoStorageCapacity = "You can record \(numberOfPossibleVideoMinutes) more minutes of video" 
 
 
 

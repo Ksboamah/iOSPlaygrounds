@@ -3,10 +3,12 @@
 //: This playground page, for example, has an error in it.
 //:
 //: 👈 Notice the red error symbol to the left of the line below. This is how a playground tells you where a problem is.
-1000 / 0
+1000 / 10
+
 //: Since there is an error, the playground stops running your code.\
 //: Notice that there are no results displayed in the sidebar. 👉
 2 + 2
+
 //: To get more information about an error, you can click the red error symbol. Go ahead, give it a click.
 //:
 //: When you click, the line of code is highlighted in red. A description of the error appears on the right.\
