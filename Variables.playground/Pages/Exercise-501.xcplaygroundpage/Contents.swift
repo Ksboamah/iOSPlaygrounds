@@ -20,15 +20,18 @@
  \
  After each round, `print` some statements that your opponents might make. If you can, use the value of your current score in their statements.
  */
-var startingPoints = 501
+var myPoints = 501
 let numberOfRounds = 3
-var endPoints = 0
-var pointsFromShot = 0
+var pointsFromShot = 501/9
 let numberOfThrows = 3
 
- endPoints
-
-
+for number in 0..<numberOfRounds {
+    for dartThrows in 0..<numberOfThrows {
+        myPoints -= pointsFromShot
+    }
+}
+myPoints -= 6
+print(myPoints)
 
 /*:
  
