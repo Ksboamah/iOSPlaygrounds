@@ -41,7 +41,7 @@
                                             </textField>
                                         </subviews>
                                     </stackView>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="New Temperature" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Bxc-Ta-nEv">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Celcius" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Bxc-Ta-nEv">
                                         <rect key="frame" x="0.0" y="106.5" width="297" height="20.5"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <nil key="textColor"/>
@@ -51,7 +51,10 @@
                                         <rect key="frame" x="0.0" y="152" width="297" height="30"/>
                                         <color key="backgroundColor" systemColor="systemYellowColor" red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <color key="tintColor" cocoaTouchSystemColor="darkTextColor"/>
-                                        <state key="normal" title="Calculate"/>
+                                        <state key="normal" title="Convert"/>
+                                        <connections>
+                                            <action selector="Calculate:" destination="BYZ-38-t0r" eventType="touchUpInside" id="xgx-dp-xJV"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <constraints>
@@ -67,6 +70,10 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
+                    <connections>
+                        <outlet property="celcius" destination="Bxc-Ta-nEv" id="I6V-kd-kVL"/>
+                        <outlet property="converter" destination="wjs-hp-wdz" id="Ake-sj-2AF"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>

@@ -10,6 +10,8 @@ import UIKit
 
 class ViewController: UIViewController {
 
+    @IBOutlet weak var converter: UITextField!
+    @IBOutlet weak var celcius: UILabel!
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
@@ -17,5 +19,12 @@ class ViewController: UIViewController {
 
 
     
+    @IBAction func Calculate(_ sender: Any) {
+        let tempF = Double(converter.text!)
+        
+        let tempC = 5/9 * (tempF! - 32)
+         celcius.text = String(tempC)
+    }
+   
 }
 
