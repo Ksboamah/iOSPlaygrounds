@@ -35,17 +35,17 @@ for votes in shouldMascotChangeVotes {
 //: - callout(Exercise): Test your code by calling the `for…in` loop on each of the vote collections.\
 //:Which measures won by popular vote?
 for votes in shouldInstallCoffeeVendingMachineVotes {
-    if shouldInstallCoffeeVendingMachineVotes.contains(true) {
+    if votes == true {
         yesCount.append(true)
-    } else if shouldInstallCoffeeVendingMachineVotes.contains(false){
+    } else if votes == false {
         noCount.append(false)
     }
 }
 
 for votes in shouldHaveMorePollOptionsVotes {
-    if shouldHaveMorePollOptionsVotes.contains(true) {
+    if votes == true {
         yesCount.append(true)
-    } else if shouldHaveMorePollOptionsVotes.contains(false){
+    } else if votes == false {
         noCount.append(false)
     }
 }
@@ -66,9 +66,9 @@ for votes in shouldHaveMorePollOptionsVotes {
 // Add your vote-processing function here:
 func pollresults(forIssue: String, withVotes: [Bool]) {
     for votes in withVotes {
-        if votes == Bool(true) {
+        if votes == true {
             yesCount.append(true)
-        } else if votes == Bool(false){
+        } else if votes == false {
             noCount.append(false)
         }
     }
