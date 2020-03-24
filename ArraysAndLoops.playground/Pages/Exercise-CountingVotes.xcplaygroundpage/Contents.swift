@@ -18,16 +18,16 @@ let shouldHaveMorePollOptionsVotes: [Bool] = [false, false, true, true, false, t
 
 //: - callout(Exercise): Create two variables, one to count `yes` votes and one to count `no` votes. Each should start off with a value of zero.
 //:
-var yesCount = [Bool]()
-var noCount = [Bool]()
+var yesCount = 0
+var noCount = 0
 
 
 //: - callout(Exercise): After the loop has finished, write an `if` statement that compares the two values and prints a different message based on whether the vote passed or failed.
 for votes in shouldMascotChangeVotes {
-    if shouldMascotChangeVotes.contains(true) {
-        yesCount.append(true)
-    } else if shouldMascotChangeVotes.contains(false){
-        noCount.append(false)
+    if votes == true {
+        yesCount += 1
+    } else if votes == false {
+        noCount += 1
     }
 }
 
@@ -36,19 +36,20 @@ for votes in shouldMascotChangeVotes {
 //:Which measures won by popular vote?
 for votes in shouldInstallCoffeeVendingMachineVotes {
     if votes == true {
-        yesCount.append(true)
+        yesCount += 1
     } else if votes == false {
-        noCount.append(false)
+        noCount += 1
     }
 }
 
 for votes in shouldHaveMorePollOptionsVotes {
     if votes == true {
-        yesCount.append(true)
+        yesCount += 1
     } else if votes == false {
-        noCount.append(false)
+        noCount += 1
     }
 }
+
 
 
 
@@ -64,19 +65,19 @@ for votes in shouldHaveMorePollOptionsVotes {
  `Should we change the mascot? 54 yes, 23 no`
  */
 // Add your vote-processing function here:
-func pollresults(forIssue: String, withVotes: [Bool]) {
+func pollresults(forIssue: String, withVotes: [Bool])-> String {
+    var voterYesCount = 0
+    var voterNoCount = 0
     for votes in withVotes {
         if votes == true {
-            yesCount.append(true)
+            voterYesCount += 1
         } else if votes == false {
-            noCount.append(false)
+            voterNoCount += 1
         }
     }
-
+    return "\(forIssue) \(voterYesCount) yes, \(voterNoCount) no. "
 }
 
-
-
-
+pollresults(forIssue: "Should we install coffee vending machines?", withVotes: shouldInstallCoffeeVendingMachineVotes)
 
 //: [Previous](@previous)  |  page 15 of 17  |  [Next: Exercise: Goals](@next)
