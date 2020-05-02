@@ -8,8 +8,8 @@
 
 import UIKit
 
-extension UIViewController {
-    func regexMatches(pattern: String) -> Array<String> {
+extension String {
+    func regexMatches(pattern: String) -> [String] {
         let re: NSRegularExpression
         do {
             re = try NSRegularExpression(pattern: pattern, options: [])
@@ -33,15 +33,14 @@ extension UIViewController {
 
 
 class ViewController: UIViewController {
-
+    var contents = String()
     override func viewDidLoad() {
         super.viewDidLoad()
 
         
         if let url = URL(string: "https://www.rollingstone.com/charts/songs/") {
             do {
-                let contents = try String(contentsOf: url)
-                print(contents)
+                contents = try String(contentsOf: url)
                 
             } catch {
                 // contents could not be loaded
@@ -50,11 +49,21 @@ class ViewController: UIViewController {
             // the URL was bad!
         }
         // Do any additional setup after loading the view.
+     let titles = contents.regexMatches(pattern: "title\"><p>(.*?)</p>")
+        let artists = contents.regexMatches(pattern: "c-chart__table--caption\">(.*?)<")
+        var songs = [Song]()
+        for x in 0..<15 {
+            songs.append(Song(title: titles[x], artist: artists[x]))
+        }
+        print(songs[0])
+        
+                
+            
+        
+    }
     }
     
-    override func regexMatches(pattern: "title\"><p>Life is Good</p>") -> Array<String> {
-        <#code#>
-    }
+    
     /*
     // MARK: - Navigation
 
@@ -65,7 +74,7 @@ class ViewController: UIViewController {
     }
     */
 
-}
+
 
 
 
