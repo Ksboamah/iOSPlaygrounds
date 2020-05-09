@@ -15,6 +15,7 @@
 		1F1C863C2446791100779066 /* NewmuTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F1C863B2446791100779066 /* NewmuTests.swift */; };
 		1F1C86472446791100779066 /* NewmuUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F1C86462446791100779066 /* NewmuUITests.swift */; };
 		1F1C8655244948E300779066 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F1C8654244948E300779066 /* ViewController.swift */; };
+		1F3930442465C2C800AB6753 /* NewSongViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F3930432465C2C800AB6753 /* NewSongViewController.swift */; };
 		1F547A202459D224005DC7DB /* Song.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F547A1F2459D224005DC7DB /* Song.swift */; };
 /* End PBXBuildFile section */
 
@@ -50,6 +51,7 @@
 		1F1C86462446791100779066 /* NewmuUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewmuUITests.swift; sourceTree = "<group>"; };
 		1F1C86482446791100779066 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		1F1C8654244948E300779066 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		1F3930432465C2C800AB6753 /* NewSongViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewSongViewController.swift; sourceTree = "<group>"; };
 		1F547A1F2459D224005DC7DB /* Song.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Song.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -105,6 +107,7 @@
 				1F1C86242446790E00779066 /* AppDelegate.swift */,
 				1F1C86262446790E00779066 /* SceneDelegate.swift */,
 				1F1C862A2446790E00779066 /* Main.storyboard */,
+				1F3930432465C2C800AB6753 /* NewSongViewController.swift */,
 				1F1C8654244948E300779066 /* ViewController.swift */,
 				1F1C862D2446791100779066 /* Assets.xcassets */,
 				1F1C862F2446791100779066 /* LaunchScreen.storyboard */,
@@ -262,6 +265,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1F3930442465C2C800AB6753 /* NewSongViewController.swift in Sources */,
 				1F547A202459D224005DC7DB /* Song.swift in Sources */,
 				1F1C8655244948E300779066 /* ViewController.swift in Sources */,
 				1F1C86252446790E00779066 /* AppDelegate.swift in Sources */,

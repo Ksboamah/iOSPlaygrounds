@@ -36,7 +36,7 @@ class ViewController: UIViewController {
     
     @IBOutlet weak var newSongButton: UIButton!
     
-
+    var songs = [Song]()
     var contents = String()
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -55,23 +55,29 @@ class ViewController: UIViewController {
         // Do any additional setup after loading the view.
      let titles = contents.regexMatches(pattern: "title\"><p>(.*?)</p>")
         let artists = contents.regexMatches(pattern: "c-chart__table--caption\">(.*?)<")
-        var songs = [Song]()
+        
         for x in 0..<15 {
             songs.append(Song(title: titles[x], artist: artists[x]))
         }
-        print(songs[0])
+//        print(songs[0])
         
                 
-            func updateSong()
-            {
-                let day = Calendar.current.component(.day, from: Date())
-                let songOfTheDay = Song[day - 1]
-
-                wordLabel.text = wordList[wordNumber].word
-                pronounciationLabel.text = wordList[wordNumber].pronounciation
-            }
+//            func updateSong()
+//            {
+//                let day = Calendar.current.component(.day, from: Date())
+//                let songOfTheDay = Song[day - 1]
+//
+//                wordLabel.text = wordList[wordNumber].word
+//                pronounciationLabel.text = wordList[wordNumber].pronounciation
+//            }
         
     }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        let destinationVC = segue.destination as? NewSongViewController
+        destinationVC?.songsToShow = songs
+    }
+    
     }
     
     

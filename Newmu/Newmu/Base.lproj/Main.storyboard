@@ -26,6 +26,9 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" systemColor="systemRedColor" red="1" green="0.23137254900000001" blue="0.18823529410000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <state key="normal" title="Song of the day"/>
+                                <connections>
+                                    <segue destination="6BY-tl-q6Z" kind="presentation" identifier="NewSong" id="1zc-Zk-dds"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
@@ -39,23 +42,23 @@
             </objects>
             <point key="canvasLocation" x="137.68115942028987" y="92.410714285714278"/>
         </scene>
-        <!--View Controller-->
+        <!--New Song View Controller-->
         <scene sceneID="4og-rX-W62">
             <objects>
-                <viewController id="6BY-tl-q6Z" sceneMemberID="viewController">
+                <viewController id="6BY-tl-q6Z" customClass="NewSongViewController" customModule="Newmu" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="ceL-pE-HMR">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Song Artist" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mCU-rg-NMb">
-                                <rect key="frame" x="118" y="538" width="179" height="126"/>
+                                <rect key="frame" x="20" y="458" width="374" height="302"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="35"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Song Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ReE-gB-Hwb">
-                                <rect key="frame" x="124" y="128" width="166" height="40"/>
+                                <rect key="frame" x="124" y="144" width="166" height="40"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="33"/>
                                 <nil key="textColor"/>
@@ -65,10 +68,14 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <viewLayoutGuide key="safeArea" id="7ca-E8-sLO"/>
                     </view>
+                    <connections>
+                        <outlet property="songArtist" destination="mCU-rg-NMb" id="o5L-7X-1Fr"/>
+                        <outlet property="songName" destination="ReE-gB-Hwb" id="Qke-O1-ki3"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="sEr-zn-1ug" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="913.04347826086962" y="91.741071428571431"/>
+            <point key="canvasLocation" x="1102.8985507246377" y="91.741071428571431"/>
         </scene>
     </scenes>
 </document>
