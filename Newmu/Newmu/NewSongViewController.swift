@@ -16,14 +16,19 @@ class NewSongViewController: UIViewController {
     var songsToShow: [Song]?
     override func viewDidLoad() {
         super.viewDidLoad()
-        let song1 = songsToShow![0]
-        songName.text = song1.title
-        songArtist.text = song1.artist
-        
+        updateSong()
+      
         // Do any additional setup after loading the view.
     }
-    
+   
+    func updateSong()
+          {
+              let day = Calendar.current.component(.day, from: Date())
+              let songOfTheDay = songsToShow![day - 1]
 
+              songName.text = songOfTheDay.title
+              songArtist.text = songOfTheDay.artist
+          }
     /*
     // MARK: - Navigation
 

@@ -62,14 +62,7 @@ class ViewController: UIViewController {
 //        print(songs[0])
         
                 
-//            func updateSong()
-//            {
-//                let day = Calendar.current.component(.day, from: Date())
-//                let songOfTheDay = Song[day - 1]
-//
-//                wordLabel.text = wordList[wordNumber].word
-//                pronounciationLabel.text = wordList[wordNumber].pronounciation
-//            }
+            
         
     }
     
