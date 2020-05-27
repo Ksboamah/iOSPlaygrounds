@@ -17,14 +17,15 @@ class NewSongViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         updateSong()
-      
+        
         // Do any additional setup after loading the view.
     }
    
     func updateSong()
           {
+            songsToShow?.shuffle()
               let day = Calendar.current.component(.day, from: Date())
-              let songOfTheDay = songsToShow![day - 1]
+            let songOfTheDay = songsToShow![day]
 
               songName.text = songOfTheDay.title
               songArtist.text = songOfTheDay.artist

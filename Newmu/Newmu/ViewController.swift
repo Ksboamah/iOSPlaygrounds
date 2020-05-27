@@ -35,6 +35,7 @@ extension String {
 class ViewController: UIViewController {
     
     @IBOutlet weak var newSongButton: UIButton!
+ 
     
     var songs = [Song]()
     var contents = String()
