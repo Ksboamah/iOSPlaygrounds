@@ -15,6 +15,7 @@
 		1F1C863C2446791100779066 /* NewmuTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F1C863B2446791100779066 /* NewmuTests.swift */; };
 		1F1C86472446791100779066 /* NewmuUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F1C86462446791100779066 /* NewmuUITests.swift */; };
 		1F1C8655244948E300779066 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F1C8654244948E300779066 /* ViewController.swift */; };
+		1F315864247FF3A900CE7E1D /* FetchMusic.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F315863247FF3A900CE7E1D /* FetchMusic.swift */; };
 		1F3930442465C2C800AB6753 /* NewSongViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F3930432465C2C800AB6753 /* NewSongViewController.swift */; };
 		1F547A202459D224005DC7DB /* Song.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F547A1F2459D224005DC7DB /* Song.swift */; };
 /* End PBXBuildFile section */
@@ -51,6 +52,7 @@
 		1F1C86462446791100779066 /* NewmuUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewmuUITests.swift; sourceTree = "<group>"; };
 		1F1C86482446791100779066 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		1F1C8654244948E300779066 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		1F315863247FF3A900CE7E1D /* FetchMusic.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FetchMusic.swift; sourceTree = "<group>"; };
 		1F3930432465C2C800AB6753 /* NewSongViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewSongViewController.swift; sourceTree = "<group>"; };
 		1F547A1F2459D224005DC7DB /* Song.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Song.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -84,6 +86,7 @@
 			isa = PBXGroup;
 			children = (
 				1F547A1F2459D224005DC7DB /* Song.swift */,
+				1F315863247FF3A900CE7E1D /* FetchMusic.swift */,
 				1F1C86232446790E00779066 /* Newmu */,
 				1F1C863A2446791100779066 /* NewmuTests */,
 				1F1C86452446791100779066 /* NewmuUITests */,
@@ -269,6 +272,7 @@
 				1F547A202459D224005DC7DB /* Song.swift in Sources */,
 				1F1C8655244948E300779066 /* ViewController.swift in Sources */,
 				1F1C86252446790E00779066 /* AppDelegate.swift in Sources */,
+				1F315864247FF3A900CE7E1D /* FetchMusic.swift in Sources */,
 				1F1C86272446790E00779066 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

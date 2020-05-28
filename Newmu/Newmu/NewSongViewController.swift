@@ -13,23 +13,17 @@ class NewSongViewController: UIViewController {
     @IBOutlet weak var songName: UILabel!
     @IBOutlet weak var songArtist: UILabel!
     
-    var songsToShow: [Song]?
+    var songToShow: Song?
     override func viewDidLoad() {
         super.viewDidLoad()
-        updateSong()
+        songName.text = songToShow?.title
+        songArtist.text = songToShow?.artist
+        
         
         // Do any additional setup after loading the view.
     }
    
-    func updateSong()
-          {
-            songsToShow?.shuffle()
-              let day = Calendar.current.component(.day, from: Date())
-            let songOfTheDay = songsToShow![day]
-
-              songName.text = songOfTheDay.title
-              songArtist.text = songOfTheDay.artist
-          }
+   
     /*
     // MARK: - Navigation
 
