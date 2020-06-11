@@ -31,6 +31,7 @@ extension String {
     
 }
 
+
 struct FetchMusic {
     var contents = String()
     var contents2 = String()
@@ -51,9 +52,22 @@ struct FetchMusic {
         // Do any additional setup after loading the view.
         let titles = contents.regexMatches(pattern: "title\"><p>(.*?)</p>")
         let artists = contents.regexMatches(pattern: "c-chart__table--caption\">(.*?)<")
-        
+        let images =  contents.regexMatches(pattern: "c-chart__table--cover\" src=(.*?)>")
+        let endNumber = images.count
+        var newImages = [String]()
+        func images() -> [String]{
+                for x in 0..<endNumber + 1{
+                    let imageLink = images[x]
+                    let start = imageLink.index(imageLink.startIndex, offsetBy: imageLink.count)
+                    let end = imageLink.index(imageLink.endIndex, offsetBy: 1)
+                    let range = start..<end
+                    let mysubstring = imageLink[range]
+                    newImages.append(String(mysubstring))
+        }
+            return newImages
+    }
         for x in 0..<15 {
-            songs.append(Song(title: titles[x], artist: artists[x]))
+            songs.append(Song(title: titles[x], artist: artists[x], image: newImages[x]))
         }
         
         if let url2 = URL(string: "https://www.billboard.com/charts/hot-100"){
@@ -69,10 +83,19 @@ struct FetchMusic {
         // Do any additional setup after loading the view.
         let titles2 = contents2.regexMatches(pattern: " text--truncate color--primary\">(.*?)</span>")
         let artists2 = contents2.regexMatches(pattern: "artist text--truncate color--secondary\">(.*?)</span>")
+        let images2 = contents2.regexMatches(pattern: "chart-element__image flex--no-shrink\" style=\"background-image: url('(.*?)');\"></span>")
         
-        for x in 16..<31 {
-            songs.append(Song(title: titles2[x], artist: artists2[x]))
+        for x in 16..<30 {
+            songs.append(Song(title: titles2[x], artist: artists2[x], image: images2[x]))
         }
+        
+        func updateSong() -> Song
+            {
+                songs.shuffle()
+                let day = Calendar.current.component(.day, from: Date())
+                return songs[day]
+                }
+        
         if songOfTheDay == nil {
             songOfTheDay = updateSong()
         }
@@ -80,10 +103,5 @@ struct FetchMusic {
         
     }
     
-    mutating func updateSong() -> Song
-    {
-        songs.shuffle()
-        let day = Calendar.current.component(.day, from: Date())
-        return songs[day]
-    }
+  
 }
