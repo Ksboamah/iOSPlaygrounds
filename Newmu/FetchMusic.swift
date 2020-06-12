@@ -37,6 +37,7 @@ struct FetchMusic {
     var contents2 = String()
     var songs = [Song]()
     var songOfTheDay: Song?
+    var newImages = [String]()
     
     init() {
         if let url = URL(string: "https://www.rollingstone.com/charts/songs/") {
@@ -55,20 +56,19 @@ struct FetchMusic {
         let images =  contents.regexMatches(pattern: "c-chart__table--cover\" src=(.*?)>")
         let endNumber = images.count
         var newImages = [String]()
-        func images() -> [String]{
-                for x in 0..<endNumber + 1{
+        
+         for x in 0..<endNumber{
                     let imageLink = images[x]
-                    let start = imageLink.index(imageLink.startIndex, offsetBy: imageLink.count)
-                    let end = imageLink.index(imageLink.endIndex, offsetBy: 1)
+                    let start = imageLink.index(imageLink.startIndex, offsetBy: 1)
+                    let end = imageLink.index(imageLink.endIndex, offsetBy: -1)
                     let range = start..<end
                     let mysubstring = imageLink[range]
                     newImages.append(String(mysubstring))
-        }
-            return newImages
-    }
-        for x in 0..<15 {
-            songs.append(Song(title: titles[x], artist: artists[x], image: newImages[x]))
-        }
+                }
+  
+          for x in 0..<15 {
+                 songs.append(Song(title: titles[x], artist: artists[x], image: newImages[x]))
+             }
         
         if let url2 = URL(string: "https://www.billboard.com/charts/hot-100"){
             do {
@@ -83,11 +83,12 @@ struct FetchMusic {
         // Do any additional setup after loading the view.
         let titles2 = contents2.regexMatches(pattern: " text--truncate color--primary\">(.*?)</span>")
         let artists2 = contents2.regexMatches(pattern: "artist text--truncate color--secondary\">(.*?)</span>")
-        let images2 = contents2.regexMatches(pattern: "chart-element__image flex--no-shrink\" style=\"background-image: url('(.*?)');\"></span>")
+        //let images2 = contents2.regexMatches(pattern: "chart-element__image flex--no-shrink\" style=\"background-image: url('(.*?)');\"></span>")
+      //  print(images2)
         
-        for x in 16..<30 {
-            songs.append(Song(title: titles2[x], artist: artists2[x], image: images2[x]))
-        }
+       // for x in 16..<30 {
+           // songs.append(Song(title: titles2[x], artist: artists2[x], image: images2[x]))
+        //}
         
         func updateSong() -> Song
             {
